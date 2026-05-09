@@ -6,7 +6,7 @@ Use this prompt in the `~/work/video` workspace to generate the Remotion video c
 
 ## Prompt
 
-Create a Remotion video composition for the Digital Samba Skill demo. This is a marketing video showcasing how the Digital Samba Claude Code skill enables rapid video conferencing app development.
+Create a Remotion video composition for the Digital Samba Skill demo. This is a marketing video showcasing how the Digital Samba Codex skill enables rapid video conferencing app development.
 
 ### Project Location
 `~/work/video/digital-samba-skill-demo/remotion/`
@@ -14,7 +14,7 @@ Create a Remotion video composition for the Digital Samba Skill demo. This is a 
 ### Available Assets
 
 **Demo Videos** (`public/demos/`):
-- `skill-install.mp4` - GIF conversion showing Claude Code skill installation (382KB)
+- `skill-install.mp4` - GIF conversion showing Codex skill installation (382KB)
 - `app-walkthrough.mp4` - Playwright recording of full interview room flow (892KB, ~31s)
 
 **Images** (`public/images/`):
@@ -22,7 +22,7 @@ Create a Remotion video composition for the Digital Samba Skill demo. This is a 
 - `embedded-app-icon.png` - SDK app icon
 
 **Asciinema Casts** (`assets/` - need conversion or player embed):
-- `build-app.cast` - Terminal recording of Claude building the app
+- `build-app.cast` - Terminal recording of Codex building the app
 - `skill-install.cast` - Terminal recording of skill installation
 
 ### Branding
@@ -33,7 +33,7 @@ Create a Remotion video composition for the Digital Samba Skill demo. This is a 
 
 ### Video Structure (~2:00-2:30)
 
-1. **Title Slide** (5s) - DS logo + "Build Video Conferencing in Minutes" + "Claude Code + Digital Samba"
+1. **Title Slide** (5s) - DS logo + "Build Video Conferencing in Minutes" + "Codex + Digital Samba"
 
 2. **Problem Statement** (8s) - "Video conferencing integration is complex..." with visual of API complexity
 
@@ -41,7 +41,7 @@ Create a Remotion video composition for the Digital Samba Skill demo. This is a 
 
 4. **Skill Installation** (15s) - Play `skill-install.mp4`, voiceover explains one-command install
 
-5. **Building the App** (25s) - Show Claude building the app. Key message: "We gave Claude creative freedom to interpret what an online interview should look like"
+5. **Building the App** (25s) - Show Codex building the app. Key message: "We gave Codex creative freedom to interpret what an online interview should look like"
 
 6. **App Walkthrough** (35s) - Play `app-walkthrough.mp4` showing:
    - Home page with dual cards (Interviewer/Candidate)
@@ -56,7 +56,7 @@ Create a Remotion video composition for the Digital Samba Skill demo. This is a 
 
 ### Voiceover Script
 See `VOICEOVER-SCRIPT.md` for full timed narration. Key addition:
-> "We gave Claude creative freedom to interpret what an online interview experience should look like."
+> "We gave Codex creative freedom to interpret what an online interview experience should look like."
 
 ### Technical Requirements
 - Resolution: 1920x1080

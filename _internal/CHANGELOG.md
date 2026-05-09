@@ -1,6 +1,6 @@
 # Toolkit Changelog
 
-All notable changes to claude-code-video-toolkit.
+All notable changes to codex-code-video-toolkit.
 
 > Releases are automated via GitHub Actions. See `.github/workflows/release.yml`.
 
@@ -9,12 +9,12 @@ All notable changes to claude-code-video-toolkit.
 ## 2026-04-09 (v0.14.2)
 
 ### Added
-- **moviepy skill** (`.claude/skills/moviepy/`) — Python video composition for overlaying deterministic text on AI-generated video (LTX-2, SadTalker). Leads with the "trustworthy text" framing: news, trailers, lower thirds, and social captions all need deterministic overlay because AI models can't guarantee readable text. Covers the PIL workaround for moviepy 2.x's TextClip ascender-clipping bug, audio-anchored timelines, common recipes (labels on LTX-2 clips, lower thirds on SadTalker heads, tinted overlays for contrast, split-screen composites, music + VO mixing), 2.x API gotchas, and a genres-where-this-shines table.
+- **moviepy skill** (`.agents/skills/moviepy/`) — Python video composition for overlaying deterministic text on AI-generated video (LTX-2, SadTalker). Leads with the "trustworthy text" framing: news, trailers, lower thirds, and social captions all need deterministic overlay because AI models can't guarantee readable text. Covers the PIL workaround for moviepy 2.x's TextClip ascender-clipping bug, audio-anchored timelines, common recipes (labels on LTX-2 clips, lower thirds on SadTalker heads, tinted overlays for contrast, split-screen composites, music + VO mixing), 2.x API gotchas, and a genres-where-this-shines table.
 - **`examples/quick-spot`** — runnable 15-second ad-style moviepy example. Audio-anchored timeline, PIL text rendering with cross-platform font loading, optional per-scene VO + ducked music, solid-colour backgrounds. Renders with `python3 build.py` and zero external assets.
 - **`examples/data-viz-chart`** — runnable animated time-series chart (real GitHub star history) demonstrating the "matplotlib for data + moviepy for trustworthy text" split that mirrors real news-graphics pipelines. Cache-aware matplotlib step.
 - **`examples/hello-world`** — minimal Remotion sprint-review example finally committed. The root README's quick-start callout has been pointing at `cd examples/hello-world && npm install && npm run render` since Feb 23, but the example had zero git history on any branch. Fixes the broken link for anyone cloning the repo.
-- **LTX-2 skill: Stylized Character Cameo** — new use case in `.claude/skills/ltx2/SKILL.md` documenting LTX-2 image-to-video as a SadTalker alternative for non-photoreal faces (fantasy characters, heavy beards, masks, helmets) where lip-sync precision matters less than motion + atmosphere.
-- **CLAUDE.md: Audio-Anchored Timelines** — new subsection in the Video Timing guide complementing the existing reactive `sync_timing.py` flow with a prevention-first pattern (generate audio first, anchor visuals to absolute timestamps). Especially useful for single-file moviepy `build.py` projects.
+- **LTX-2 skill: Stylized Character Cameo** — new use case in `.agents/skills/ltx2/SKILL.md` documenting LTX-2 image-to-video as a SadTalker alternative for non-photoreal faces (fantasy characters, heavy beards, masks, helmets) where lip-sync precision matters less than motion + atmosphere.
+- **AGENTS.md: Audio-Anchored Timelines** — new subsection in the Video Timing guide complementing the existing reactive `sync_timing.py` flow with a prevention-first pattern (generate audio first, anchor visuals to absolute timestamps). Especially useful for single-file moviepy `build.py` projects.
 
 ### Changed
 - **`tools/requirements.txt`** adds `Pillow>=10.0`, `moviepy>=2.0`, `matplotlib>=3.7`. One install command (`python3 -m pip install -r tools/requirements.txt`) now covers every Python feature in the toolkit: AI voiceover, image gen, music gen, and the new moviepy examples.
@@ -75,7 +75,7 @@ All notable changes to claude-code-video-toolkit.
   - Valid frame counts: 25-193 frames ((n-1)%8==0), 24fps default
   - Modal deployment on A100-80GB with baked weights (~55GB)
   - Estimated cost: ~$0.23 per 5-second clip
-- **LTX-2 skill** (`.claude/skills/ltx2/`) — prompting guide, parameters, video production use cases
+- **LTX-2 skill** (`.agents/skills/ltx2/`) — prompting guide, parameters, video production use cases
 - **Openclaw skill updated** — LTX-2 added as section 4d (video clips), setup instructions, cost table
 
 ### Technical Notes
@@ -100,7 +100,7 @@ All notable changes to claude-code-video-toolkit.
   - Docker image: `ghcr.io/conalmullan/video-toolkit-acestep:latest` (CUDA 12.8, baked model weights)
   - MIT licensed model — free alternative to ElevenLabs Music with more control
   - ~2-3s inference on GPU (turbo mode, 8 steps)
-- **ACE-Step skill** (`.claude/skills/acestep/`) — prompt engineering patterns, lyrics formatting, scene preset guide, video production integration
+- **ACE-Step skill** (`.agents/skills/acestep/`) — prompt engineering patterns, lyrics formatting, scene preset guide, video production integration
 
 ---
 
@@ -158,7 +158,7 @@ All notable changes to claude-code-video-toolkit.
   - Suggests `playbackRate` adjustments for demo scenes
 
 ### Changed
-- **CLAUDE.md slimmed 44%** (861 → 480 lines)
+- **AGENTS.md slimmed 44%** (861 → 480 lines)
   - Removed catalog data duplicated in `toolkit-registry.json` (skills, commands, components, transitions, presets, Docker images, duplicate CLI examples)
   - Added cross-references to registry for structured data
   - All workflow guidance, timing knowledge, code patterns, and tool-specific gotchas retained
@@ -175,7 +175,7 @@ All notable changes to claude-code-video-toolkit.
   - `voiceover.py --provider qwen3` for per-scene generation
   - Docker image: `ghcr.io/conalmullan/video-toolkit-qwen3-tts:latest`
   - Temperature/top_p params for expressiveness control
-- **`/voice-clone` command** — Record, test, and save a cloned voice to a brand profile
+- **`$voice-clone` command** — Record, test, and save a cloned voice to a brand profile
 - **`sprint-review-v2` template** — Composable scene-based architecture for sprint reviews
 - **`FilmGrain` component** — SVG noise overlay for cinematic film texture
 - **`hello-world` example** — Minimal 25s video, zero config, renders in 2 minutes
@@ -191,7 +191,7 @@ All notable changes to claude-code-video-toolkit.
 
 ### Changed
 - Updated README with prerequisites table, Qwen3-TTS, Docker images, voice-clone command
-- Updated CLAUDE.md with FilmGrain component and checkerboard transition
+- Updated AGENTS.md with FilmGrain component and checkerboard transition
 - Updated roadmap metrics and skill status table
 - Fixed cho-oyu demo link; added cortina sprint to demos table
 
@@ -200,13 +200,13 @@ All notable changes to claude-code-video-toolkit.
 ## 2026-02-19 (v0.9.3)
 
 ### Added
-- **Official Remotion skills** — Synced 33 rule files from [remotion-dev/skills](https://github.com/remotion-dev/skills) into `.claude/skills/remotion-official/`
+- **Official Remotion skills** — Synced 33 rule files from [remotion-dev/skills](https://github.com/remotion-dev/skills) into `.agents/skills/remotion-official/`
 - **Weekly sync workflow** — GitHub Actions checks upstream every Monday and opens a PR if files changed
 - **Sync documentation** — `docs/remotion-skills-sync.md` explaining the split and sync process
 
 ### Changed
 - **Remotion skill split** — Custom `remotion` skill trimmed from ~470 to ~160 lines, now covers only toolkit-specific patterns (transitions, components, conventions). Core framework knowledge deferred to `remotion-official`
-- Updated CLAUDE.md skills table with both remotion skills
+- Updated AGENTS.md skills table with both remotion skills
 
 ---
 
@@ -225,13 +225,13 @@ All notable changes to claude-code-video-toolkit.
   - SprintReview.tsx renders per-scene `<Audio>` elements
   - Backward compatible: global voiceover track still works
 
-- **Updated `/generate-voiceover` command**
+- **Updated `$generate-voiceover` command**
   - Detects `public/audio/scenes/*.txt` and offers per-scene mode
   - Per-scene is now the default when scene scripts exist
   - Concat option for SadTalker integration
 
 ### Changed
-- Updated documentation (CLAUDE.md, README.md, getting-started.md)
+- Updated documentation (AGENTS.md, README.md, getting-started.md)
 
 ---
 
@@ -268,7 +268,7 @@ All notable changes to claude-code-video-toolkit.
 
 ### Changed
 - ElevenLabs TTS: Added `eleven_v3` (alpha) model option
-- Updated `CLAUDE.md` with dewatermark and locate_watermark documentation
+- Updated `AGENTS.md` with dewatermark and locate_watermark documentation
 - Updated `.env.example` with RunPod and R2 configuration
 
 ---
@@ -285,7 +285,7 @@ All notable changes to claude-code-video-toolkit.
   - Solves: TTS often starts fast and ends slow, causing 3-4+ second drift
 
 ### Changed
-- Updated `CLAUDE.md` with Redub Sync Mode documentation
+- Updated `AGENTS.md` with Redub Sync Mode documentation
 - TTS duration now measured via ffprobe (more accurate than timestamp data)
 
 ---
@@ -299,14 +299,14 @@ All notable changes to claude-code-video-toolkit.
   - Works on any video file without requiring a project structure
 
 ### Changed
-- Updated `CLAUDE.md` with addmusic documentation
+- Updated `AGENTS.md` with addmusic documentation
 
 ---
 
 ## 2025-12-28 (v0.4.0)
 
 ### Added
-- **`/redub` command** - Redub existing videos with a different voice
+- **`$redub` command** - Redub existing videos with a different voice
   - Guided workflow for voice selection and transcript handling
   - Supports transcript review/editing before TTS generation
   - Works on any video file without requiring a project structure
@@ -324,7 +324,7 @@ All notable changes to claude-code-video-toolkit.
   - Utility tools (redub): Quick transformations on existing videos, no project needed
 
 ### Changed
-- Updated `CLAUDE.md` with utility tools documentation
+- Updated `AGENTS.md` with utility tools documentation
 - Updated Python Tools section to include redub
 
 ---
@@ -338,7 +338,7 @@ All notable changes to claude-code-video-toolkit.
   - Auto-generates changelog from commits since last tag
   - Reads version from `toolkit-registry.json`
 
-- **`/versions` command** - Check dependency versions and toolkit updates
+- **`$versions` command** - Check dependency versions and toolkit updates
   - Detects Remotion package version mismatches in projects
   - Compares local toolkit version against GitHub releases
   - Offers to fix version mismatches by pinning and reinstalling
@@ -354,13 +354,13 @@ All notable changes to claude-code-video-toolkit.
 ## 2025-12-10
 
 ### Added
-- **`/scene-review` command** - Dedicated scene-by-scene review with Remotion Studio
+- **`$scene-review` command** - Dedicated scene-by-scene review with Remotion Studio
   - Starts Remotion Studio for visual verification
   - Walks through scenes one by one (not summary tables)
   - Generic - works with any template's config
-  - `/video` now delegates to `/scene-review` when phase is `review`
-  - `/generate-voiceover` warns if review not complete
-  - Fixes: Review kept getting skipped because `/video` command was too long
+  - `$video` now delegates to `$scene-review` when phase is `review`
+  - `$generate-voiceover` warns if review not complete
+  - Fixes: Review kept getting skipped because `$video` command was too long
 
 ### Changed
 - **Consolidated tracking files** - Simplified from 4 files to 3:
@@ -371,16 +371,16 @@ All notable changes to claude-code-video-toolkit.
 - Created `docs/contributing.md` with evolution principles and contribution workflow
 
 ### Fixed
-- **Slash commands not loading** - Renamed `/skill` to `/skills` to avoid conflict with built-in `Skill` tool. The naming collision was silently preventing ALL custom commands from loading. Bug reported to Anthropic.
+- **Slash commands not loading** - Renamed `/skill` to `$skills` to avoid conflict with built-in `Skill` tool. The naming collision was silently preventing ALL custom commands from loading. Bug reported to OpenAI.
 
 ### Removed
-- **`/review` command** - Clashed with Claude Code's built-in PR review command. Replaced by `/scene-review`.
+- **`/review` command** - Clashed with Codex's built-in PR review command. Replaced by `$scene-review`.
 
 ### Added
 - **Animation components** (`lib/components/`)
   - Envelope - 3D envelope with opening flap animation, configurable message
   - PointingHand - Animated hand emoji with directional slide-in and pulse effect
-- **`/contribute` command** - Guided contribution workflow
+- **`$contribute` command** - Guided contribution workflow
   - Report issues via `gh issue create`
   - Submit PRs for improvements
   - Share skills and templates
@@ -390,7 +390,7 @@ All notable changes to claude-code-video-toolkit.
   - Local improvement workflow
   - Remote contribution links (GitHub issues + PRs)
   - Command history tracking
-- **Template evolution guidance** in `/template` command
+- **Template evolution guidance** in `$template` command
   - How to add features to existing templates
   - Template maturity indicators
   - Pattern extraction to shared lib/
@@ -407,15 +407,15 @@ All notable changes to claude-code-video-toolkit.
   - Configs, scripts, and docs are tracked
   - Large media files (mp4, mp3) are gitignored
   - Each example includes `ASSETS-NEEDED.md` documenting required media
-- **`/contribute` now supports example projects** (Option 5)
+- **`$contribute` now supports example projects** (Option 5)
   - Guides copying from projects/ to examples/
   - Auto-generates ASSETS-NEEDED.md
   - Creates README with quick start instructions
   - **Contributor recognition** with backlinks to website/org
 - **CONTRIBUTORS.md** - Recognition for organizations and individuals who share examples
 - **Documentation updates**
-  - `docs/getting-started.md` - Updated for `/video` command, added multi-session workflow
-  - `docs/creating-brands.md` - Updated for `/brand` command integration
+  - `docs/getting-started.md` - Updated for `$video` command, added multi-session workflow
+  - `docs/creating-brands.md` - Updated for `$brand` command integration
 - **Renamed `skills-registry.json` → `toolkit-registry.json`**
   - Consistent format across all entries (path, description, status, created, updated)
   - Added `components` section for shared lib/components
@@ -431,12 +431,12 @@ All notable changes to claude-code-video-toolkit.
   - `README.md` - Documentation for project lifecycle and phases
   - Projects now track: phase, scenes, assets, audio, session history
   - Filesystem reconciliation (compares intent vs reality)
-  - Auto-generated CLAUDE.md per project for instant context
+  - Auto-generated AGENTS.md per project for instant context
 
 - **Unified commands** - Context-aware entry points that list existing items or create new:
-  - `/video` - Replaces `/new-video`. Scans projects, offers resume or new
-  - `/brand` - Replaces `/new-brand`. Lists brands, edit or create new
-  - `/template` - Lists templates or creates new ones (copy, minimal, from project)
+  - `$video` - Replaces `/new-video`. Scans projects, offers resume or new
+  - `$brand` - Replaces `/new-brand`. Lists brands, edit or create new
+  - `$template` - Lists templates or creates new ones (copy, minimal, from project)
   - `/skill` - Lists installed skills or creates new ones
 
 ### Changed
@@ -445,11 +445,11 @@ All notable changes to claude-code-video-toolkit.
 - README.md updated with new commands and multi-session workflow
 
 ### Removed
-- `/new-video` - Replaced by `/video`
-- `/new-brand` - Replaced by `/brand`
+- `/new-video` - Replaced by `$video`
+- `/new-brand` - Replaced by `$brand`
 
 ### Notes
-- After creating/modifying commands or skills, restart Claude Code to load changes
+- After creating/modifying commands or skills, restart Codex to load changes
 
 ---
 
@@ -504,7 +504,7 @@ All notable changes to claude-code-video-toolkit.
   - Choose brand from available brands
   - **Scene-centric workflow:**
     - Content gathering (URLs, notes, paste)
-    - Claude proposes scene breakdown
+    - Codex proposes scene breakdown
     - Interactive scene refinement
     - Scene types: title, overview, demo, split-demo, stats, credits, problem, solution, feature, cta
     - Visual types: `[DEMO]`, `[SCREENSHOT]`, `[EXTERNAL VIDEO]`, `[SLIDE]`
@@ -516,18 +516,18 @@ All notable changes to claude-code-video-toolkit.
 ### Changed
 - **Replaced `/new-sprint-video` with `/new-video`** - single entry point for all templates
 - Templates now load theme from `brand.ts` instead of hardcoded values
-- Updated CLAUDE.md with new workflow and commands
+- Updated AGENTS.md with new workflow and commands
 - Updated ROADMAP.md - Phase 3 template-brand integration complete
-- **Added Video Timing section to CLAUDE.md** - pacing rules, scene durations, timing calculations
+- **Added Video Timing section to AGENTS.md** - pacing rules, scene durations, timing calculations
 - **Removed `/convert-asset` from backlog** - FFmpeg skill handles this conversationally
-- **Removed `/sync-timing` from backlog** - timing knowledge now in CLAUDE.md
+- **Removed `/sync-timing` from backlog** - timing knowledge now in AGENTS.md
 
 ---
 
 ## 2025-12-08
 
 ### Added
-- **Open source release** - Published to GitHub at digitalsamba/claude-code-video-toolkit
+- **Open source release** - Published to GitHub at estrindavid/codex-code-video-toolkit
 - **Brand profiles system** (`brands/`)
   - `brand.json` for colors, fonts, typography
   - `voice.json` for ElevenLabs voice settings
@@ -540,8 +540,8 @@ All notable changes to claude-code-video-toolkit.
 - **Environment variable support**
   - `ELEVENLABS_VOICE_ID` - Set voice ID via env var
   - Falls back to `_internal/skills-registry.json` if not set
-- `/generate-voiceover` command - guided ElevenLabs TTS generation
-- `/record-demo` command - guided Playwright browser recording
+- `$generate-voiceover` command - guided ElevenLabs TTS generation
+- `$record-demo` command - guided Playwright browser recording
 - Interactive recording stop controls (Escape key, Stop button)
 - Window scaling for laptop screens (`--scale` option, default 0.75)
 - FFmpeg skill (beta) - common video/audio conversion commands

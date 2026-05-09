@@ -85,6 +85,6 @@ In `build.py`:
 
 ## See also
 
-- [`.claude/skills/ltx2/SKILL.md`](../../.claude/skills/ltx2/SKILL.md) — LTX-2 prompting and the `crt-terminal` style LoRA
-- [`.claude/skills/moviepy/SKILL.md`](../../.claude/skills/moviepy/SKILL.md) — audio-anchored timelines and single-file `build.py` conventions
+- [`.agents/skills/ltx2/SKILL.md`](../../.agents/skills/ltx2/SKILL.md) — LTX-2 prompting and the `crt-terminal` style LoRA
+- [`.agents/skills/moviepy/SKILL.md`](../../.agents/skills/moviepy/SKILL.md) — audio-anchored timelines and single-file `build.py` conventions
 - [`examples/quick-spot/`](../quick-spot/) — the minimal moviepy example this pattern builds on

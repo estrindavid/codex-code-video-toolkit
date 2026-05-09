@@ -1,34 +1,34 @@
-# claude-code-video-toolkit
+# codex-code-video-toolkit
 
 <p align="center">
-  <img src="assets/banner/toolkit-banner.gif" alt="claude-code-video-toolkit — NARRATE ▸ SCORE ▸ GENERATE ▸ COMPOSE ▸ RENDER" width="960" />
+  <img src="assets/banner/toolkit-banner.gif" alt="codex-code-video-toolkit — NARRATE ▸ SCORE ▸ GENERATE ▸ COMPOSE ▸ RENDER" width="960" />
 </p>
 
-[![GitHub release](https://img.shields.io/github/v/release/digitalsamba/claude-code-video-toolkit)](https://github.com/digitalsamba/claude-code-video-toolkit/releases)
+[![GitHub release](https://img.shields.io/github/v/release/estrindavid/codex-code-video-toolkit)](https://github.com/estrindavid/codex-code-video-toolkit/releases)
 
-An AI-native video production workspace for [Claude Code](https://claude.ai/code). Skills, commands, templates, and tools that give Claude Code everything it needs to help you create professional videos — from concept to final render.
+An AI-native video production workspace for [Codex](https://developers.openai.com/codex). Skills, workflow prompts, templates, and tools that give Codex everything it needs to help you create professional videos — from concept to final render.
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/digitalsamba/claude-code-video-toolkit.git
-cd claude-code-video-toolkit
+git clone https://github.com/estrindavid/codex-code-video-toolkit.git
+cd codex-code-video-toolkit
 python3 -m pip install -r tools/requirements.txt   # Optional: AI voiceover, image gen, music, moviepy examples
-claude                                              # Open Claude Code in the toolkit
+codex                                              # Open Codex in the toolkit
 ```
 
-Then in Claude Code:
+Then in Codex, invoke the toolkit skills:
 
 ```
-/setup                    # Configure cloud GPU, storage, voice (~5 min, mostly free)
-/video                    # Create your first video
+$setup                    # Configure cloud GPU, storage, voice (~5 min, mostly free)
+$video                    # Create your first video
 ```
 
-**That's it.** `/setup` walks you through everything interactively — cloud GPU provider, file transfer, voice config. `/video` creates a project from a template and guides you through the whole workflow.
+**That's it.** `$setup` walks you through everything interactively — cloud GPU provider, file transfer, voice config. `$video` creates a project from a template and guides you through the whole workflow.
 
 **What's free:** The toolkit leans heavily on open-source AI models — voiceovers (Qwen3-TTS), image generation (FLUX.2), music (ACE-Step), and more. You deploy them to your own cloud GPU account and run them at cost. Cloudflare R2 has a generous free tier (10GB, zero egress), and Modal gives $30/month free compute on the Starter plan — more than enough for a few 5-minute videos a month.
 
-**Requirements:** [Node.js](https://nodejs.org/) 18+ and [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Python 3.9+ recommended for AI tools. FFmpeg optional.
+**Requirements:** [Node.js](https://nodejs.org/) 18+ and [Codex](https://developers.openai.com/codex). Python 3.9+ recommended for AI tools. FFmpeg optional.
 
 > **Want to skip setup and just render something?**
 > ```bash
@@ -38,17 +38,21 @@ Then in Claude Code:
 
 ---
 
-## A Note from the Author *(not AI-generated)*
+## Codex Port Note
+
+This is a Codex-oriented port of Digital Samba's MIT-licensed `claude-code-video-toolkit`. The original copyright and license are preserved; the project layout, tools, templates, and examples are kept as close as possible while moving the agent-facing integration to Codex conventions.
+
+## A Note from the Original Author *(not AI-generated)*
 
 > I've spent months painstakingly putting this toolkit together and plan to keep iterating on it. AI makes things easier, but hard work still has huge value. Every video I create is a chance for improvement — every skill, template, tool, and workflow here has been refined through that cycle. It would be wonderful if others wanted to get involved with that: use it, refine it, and feed back into the repo via an issue or PR what you learn.
 >
-> My own use case is fairly specific: creating sprint review videos for the AI mobile development arm of [Digital Samba](https://www.digitalsamba.com/). But the idea behind this project is a reusable toolkit for using Claude Code to autonomously generate any kind of "explainer" style video — product demos, walkthroughs, presentations, whatever you need. Autonomous video creation is a lofty ideal for such a subjective field, but we can try :)
+> My own use case is fairly specific: creating sprint review videos for the AI mobile development arm of [Digital Samba](https://www.digitalsamba.com/). But the idea behind this project is a reusable toolkit for using Codex to autonomously generate any kind of "explainer" style video — product demos, walkthroughs, presentations, whatever you need. Autonomous video creation is a lofty ideal for such a subjective field, but we can try :)
 >
-> What makes this work is that Claude Code is fantastically resourceful and flexible — give it the framing and tooling that this toolkit provides and it will adapt it to create templates and videos based on your prompting. The skills, templates, and tools here are building blocks. Claude Code is the builder. You are the director, editor, and designer.
+> What makes this work is that Codex is fantastically resourceful and flexible — give it the framing and tooling that this toolkit provides and it will adapt it to create templates and videos based on your prompting. The skills, templates, and tools here are building blocks. Codex is the builder. You are the director, editor, and designer.
 >
-> **If you're getting started**, run `/setup` then `/video` and let Claude Code guide you. Or start with `/template` to create a template for your own use case.
+> **If you're getting started**, run `$setup` then `$video` and let Codex guide you. Or start with `$template` to create a template for your own use case.
 >
-> **Cloud GPU** — I recommend [Modal](https://modal.com/) for running the toolkit's AI tools. The Starter plan gives you $30/month free compute, which is more than enough. [RunPod](https://runpod.io/) is also supported as an alternative. Run `/setup` to deploy the tools you need.
+> **Cloud GPU** — I recommend [Modal](https://modal.com/) for running the toolkit's AI tools. The Starter plan gives you $30/month free compute, which is more than enough. [RunPod](https://runpod.io/) is also supported as an alternative. Run `$setup` to deploy the tools you need.
 >
 > My motto: **Be brave. Experiment.** And please share any videos you create or ideas you have back with the project — it helps me keep improving this toolkit for everyone.
 
@@ -56,7 +60,7 @@ Then in Claude Code:
 
 ### Skills
 
-Claude Code has deep knowledge in:
+Codex has deep knowledge in:
 
 | Skill | Description |
 |-------|-------------|
@@ -71,25 +75,25 @@ Claude Code has deep knowledge in:
 | **moviepy** | Python video composition — overlay text on LTX-2/SadTalker output, build.py-style projects |
 | **runpod** | Cloud GPU — setup, Docker images, endpoint management, costs |
 
-### Commands
+### Workflow Skills
 
-| Command | Description |
+| Skill | Description |
 |---------|-------------|
-| `/setup` | First-time setup — cloud GPU, file transfer, voice, prerequisites |
-| `/video` | Video projects — list, resume, or create new |
-| `/scene-review` | Scene-by-scene review in Remotion Studio |
-| `/design` | Focused design refinement session for a scene |
-| `/brand` | Brand profiles — list, edit, or create new |
-| `/template` | List available templates or create new ones |
-| `/skills` | List installed skills or create new ones |
-| `/contribute` | Share improvements — issues, PRs, examples |
-| `/record-demo` | Record browser interactions with Playwright |
-| `/generate-voiceover` | Generate AI voiceover from a script |
-| `/redub` | Redub existing video with a different voice |
-| `/voice-clone` | Record, test, and save a cloned voice to a brand |
-| `/versions` | Check dependency versions and toolkit updates |
+| `$setup` | First-time setup — cloud GPU, file transfer, voice, prerequisites |
+| `$video` | Video projects — list, resume, or create new |
+| `$scene-review` | Scene-by-scene review in Remotion Studio |
+| `$design` | Focused design refinement session for a scene |
+| `$brand` | Brand profiles — list, edit, or create new |
+| `$template` | List available templates or create new ones |
+| `$skills` | List installed skills or create new ones |
+| `$contribute` | Share improvements — issues, PRs, examples |
+| `$record-demo` | Record browser interactions with Playwright |
+| `$generate-voiceover` | Generate AI voiceover from a script |
+| `$redub` | Redub existing video with a different voice |
+| `$voice-clone` | Record, test, and save a cloned voice to a brand |
+| `$versions` | Check dependency versions and toolkit updates |
 
-> **Note:** After creating or modifying commands/skills, restart Claude Code to load changes.
+> **Note:** Codex discovers these from `.agents/skills`. Use `$skill-name` in the CLI; in the Codex app, enabled skills may also appear in the command list.
 
 ### Templates
 
@@ -104,7 +108,7 @@ See `examples/` for finished projects you can learn from (oldest first, showing 
 | Date | Demo | Description |
 |------|------|-------------|
 | 2025-12-05 | [sprint-review-cho-oyu](https://demos.digitalsamba.com/sprint-review-cho-oyu.mp4) | iOS sprint review with demos |
-| 2025-12-10 | [digital-samba-skill-demo](https://demos.digitalsamba.com/video/digital-samba-skill-demo.mp4) | Product demo showcasing Claude Code skill |
+| 2025-12-10 | [digital-samba-skill-demo](https://demos.digitalsamba.com/video/digital-samba-skill-demo.mp4) | Product demo showcasing Codex skill |
 | 2026-01-22 | [ds-remote-mcp](https://demos.digitalsamba.com/video/ds-remote-mcp.mp4) | Remote MCP server demo *(the jazz background music is a joke)* |
 | 2026-01-25 | [schlumbergera](https://demos.digitalsamba.com/video/schlumbergera.mp4) | Android sprint review video |
 | 2026-02-23 | [cortina](https://demos.digitalsamba.com/video/sprint-review.mp4) | Mobile platforms sprint review |
@@ -137,7 +141,7 @@ See [lib/transitions/README.md](lib/transitions/README.md) for full documentatio
 
 ### Brand Profiles
 
-Define visual identity in `brands/`. When you create a project with `/video`, the brand's colors, fonts, and styling are automatically applied.
+Define visual identity in `brands/`. When you create a project with `$video`, the brand's colors, fonts, and styling are automatically applied.
 
 ```
 brands/my-brand/
@@ -148,7 +152,7 @@ brands/my-brand/
 
 Included brands: `default`, `digital-samba`
 
-Create your own with `/brand`.
+Create your own with `$brand`.
 
 ### Project Management System
 
@@ -161,10 +165,10 @@ planning → assets → review → audio → editing → rendering → complete
 Each project has a `project.json` that tracks:
 - **Scenes** — What to show, asset status, visual types
 - **Audio** — Voiceover and music status
-- **Sessions** — Work history across Claude Code sessions
+- **Sessions** — Work history across Codex sessions
 - **Phase** — Current stage in the workflow
 
-The system automatically reconciles intent (what you planned) with reality (what files exist), and generates a `CLAUDE.md` per project for instant context when resuming.
+The system automatically reconciles intent (what you planned) with reality (what files exist), and generates a `AGENTS.md` per project for instant context when resuming.
 
 See [lib/project/README.md](lib/project/README.md) for schema details, scene status tracking, and filesystem reconciliation logic.
 
@@ -249,7 +253,7 @@ python tools/ltx2.py --prompt "Gentle camera drift" --input photo.jpg --cloud mo
 | `ltx2` | AI video generation (text-to-video, image-to-video) | ~$0.23 |
 | `dewatermark` | Video watermark removal | ~$0.10 |
 
-**Modal (recommended):** Each tool deploys from `docker/modal-*/app.py` — Modal builds and hosts the containers. $30/month free compute on the Starter plan, typical usage is $1-2/month. Run `/setup` to deploy all tools automatically.
+**Modal (recommended):** Each tool deploys from `docker/modal-*/app.py` — Modal builds and hosts the containers. $30/month free compute on the Starter plan, typical usage is $1-2/month. Run `$setup` to deploy all tools automatically.
 
 **RunPod (alternative):** Uses pre-built Docker images from `ghcr.io/conalmullan/video-toolkit-*`. Pay-per-second, no minimums. Run `python3 tools/<tool>.py --setup` to create endpoints.
 
@@ -258,10 +262,9 @@ See [docs/modal-setup.md](docs/modal-setup.md) and [docs/runpod-setup.md](docs/r
 ## Project Structure
 
 ```
-claude-code-video-toolkit/
-├── .claude/
-│   ├── skills/          # Domain knowledge for Claude
-│   └── commands/        # Slash commands (/video, /brand, etc.)
+codex-code-video-toolkit/
+├── .agents/
+│   └── skills/          # Domain knowledge and workflow skills for Codex
 ├── lib/                 # Shared components, theme system, utilities
 │   ├── components/      # Reusable video components (11 components)
 │   ├── transitions/     # Scene transition effects (7 custom + 4 official)
@@ -292,18 +295,18 @@ claude-code-video-toolkit/
 ## Video Workflow
 
 ```
-/video → Script → Assets → Scene Review → Design → Audio → Preview → Render
+$video → Script → Assets → Scene Review → Design → Audio → Preview → Render
 ```
 
-1. **Create project** — Run `/video`, choose template and brand
+1. **Create project** — Run `$video`, choose template and brand
 2. **Review script** — Edit `VOICEOVER-SCRIPT.md` to plan content and assets
-3. **Gather assets** — Record demos with `/record-demo` or add external videos
-4. **Scene review** — Run `/scene-review` to verify visuals in Remotion Studio
-5. **Design refinement** — Use `/design` to improve slide visuals with the frontend-design skill
-6. **Generate audio** — AI voiceover with `/generate-voiceover`
+3. **Gather assets** — Record demos with `$record-demo` or add external videos
+4. **Scene review** — Run `$scene-review` to verify visuals in Remotion Studio
+5. **Design refinement** — Use `$design` to improve slide visuals with the frontend-design skill
+6. **Generate audio** — AI voiceover with `$generate-voiceover`
 7. **Configure** — Update config file with asset paths and timing
 8. **Preview** — `npm run studio` for live preview
-9. **Iterate** — Work with Claude Code to adjust timing, styling, content
+9. **Iterate** — Work with Codex to adjust timing, styling, content
 10. **Render** — `npm run render` for final MP4
 
 ## Contributing
@@ -316,4 +319,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-Built for use with [Claude Code](https://claude.ai/code) by Anthropic.
+Built for use with [Codex](https://developers.openai.com/codex). Original toolkit by Digital Samba.

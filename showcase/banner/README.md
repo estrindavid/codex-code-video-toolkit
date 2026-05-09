@@ -39,6 +39,6 @@ ffmpeg -y -i out/toolkit-banner.mp4 \
 
 - `src/themes.ts` — all four color palettes in one file; swap `themes.amber` in `Root.tsx` to change the primary
 - `src/SynthwaveBackground.tsx` — base color, optional banded sun, perspective grid
-- `src/Wordmark.tsx` — "CLAUDE CODE VIDEO TOOLKIT" drop-in with glow + optional chromatic aberration
+- `src/Wordmark.tsx` — "CODEX CODE VIDEO TOOLKIT" drop-in with glow + optional chromatic aberration
 - `src/Pipeline.tsx` — `NARRATE ▸ SCORE ▸ GENERATE ▸ COMPOSE ▸ RENDER` sequential ignite
 - `src/CRTOverlay.tsx` — scanlines, power-on sweep, vignette

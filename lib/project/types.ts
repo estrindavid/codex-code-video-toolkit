@@ -178,7 +178,7 @@ export interface VideoProject {
 }
 
 // ============================================================================
-// Scanner Types (for Claude's project scanning logic)
+// Scanner Types (for Codex's project scanning logic)
 // ============================================================================
 
 /**

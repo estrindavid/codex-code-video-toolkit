@@ -62,7 +62,7 @@ export const sprintConfig: SprintConfig = {
 
   // End credits
   credits: [
-    { category: 'Made with', items: ['Claude Code', 'Remotion'] },
+    { category: 'Made with', items: ['Codex', 'Remotion'] },
     { category: 'Audio', items: ['ElevenLabs API'] },
     { category: 'Special Thanks', items: ['The Team'] },
   ],

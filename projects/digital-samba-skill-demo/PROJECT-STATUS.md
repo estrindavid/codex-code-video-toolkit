@@ -28,7 +28,7 @@ Duration: ~2:53 (173 seconds, 5190 frames @ 30fps)
 
 | Scene | Duration | Frames | Notes |
 |-------|----------|--------|-------|
-| Title | 8s | 240 | Claude + DS logos |
+| Title | 8s | 240 | Codex + DS logos |
 | Problem | 10s | 300 | |
 | Solution | 7s | 210 | |
 | Install | 30s | 900 | Extended, 2.25x playback |
@@ -83,9 +83,9 @@ remotion/out/digital-samba-skill-demo.mp4
 ## Components & Features
 
 ### Title Slide
-- Claude icon + Digital Samba logo
+- Codex icon + Digital Samba logo
 - "Integrate Video Conferencing in Minutes"
-- Subtitle: "Build video features into your apps faster with Digital Samba and Claude"
+- Subtitle: "Build video features into your apps faster with Digital Samba and Codex"
 
 ### Professional Overlays
 - **Vignette**: Subtle radial gradient darkening edges
@@ -102,9 +102,9 @@ remotion/out/digital-samba-skill-demo.mp4
 ## Files Modified This Session
 
 - `remotion/src/DigitalSambaSkillDemo.tsx` - Added narrator PiP, vignette, logo watermark, adjusted timing
-- `remotion/src/components/TitleSlide.tsx` - Claude icon, updated text
+- `remotion/src/components/TitleSlide.tsx` - Codex icon, updated text
 - `remotion/src/components/CTASlide.tsx` - Updated tagline
 - `remotion/src/components/SkillInstallDemo.tsx` - Added 2.25x playback rate
 - `generate_audio.py` - Updated voice ID to enhanced voice
 - `remotion/public/narrator.mp4` - Added narrator video
-- `remotion/public/images/claude-icon.webp` - Added Claude icon
+- `remotion/public/images/codex-icon.svg` - Added Codex icon

@@ -2,7 +2,7 @@
 
 **Skill:** ffmpeg
 **Status:** draft → beta
-**Reviewer:** Claude
+**Reviewer:** Codex
 **Date:** 2025-12-09
 
 ## Review Checklist

@@ -150,7 +150,7 @@ sprint-review-template/
 └── package.json
 ```
 
-## Commands
+## Workflow Skills
 
 | Command | Description |
 |---------|-------------|

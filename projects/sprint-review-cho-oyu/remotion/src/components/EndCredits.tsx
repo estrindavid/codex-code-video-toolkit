@@ -5,7 +5,7 @@ export const EndCredits: React.FC = () => {
   const frame = useCurrentFrame();
 
   const credits = [
-    { category: "Made with", items: ["Claude Code", "JIRA MCP Server"] },
+    { category: "Made with", items: ["Codex", "JIRA MCP Server"] },
     {
       category: "Video Production",
       items: ["Remotion - Create real MP4 videos with React"],

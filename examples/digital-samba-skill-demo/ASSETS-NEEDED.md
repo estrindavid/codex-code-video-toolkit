@@ -6,14 +6,14 @@ To run this example, you'll need to create these media assets.
 
 | File | Duration | Description | How to Create |
 |------|----------|-------------|---------------|
-| `remotion/public/demos/skill-install.mp4` | ~15s | Claude Code skill installation | Convert `assets/claude-code-install.gif` with FFmpeg |
-| `remotion/public/demos/app-walkthrough.mp4` | ~35s | Browser walkthrough of demo app | `/record-demo` or Playwright |
+| `remotion/public/demos/skill-install.mp4` | ~15s | Codex skill installation | Convert `assets/codex-code-install.gif` with FFmpeg |
+| `remotion/public/demos/app-walkthrough.mp4` | ~35s | Browser walkthrough of demo app | `$record-demo` or Playwright |
 | `remotion/public/narrator.mp4` | ~2:30 | Optional narrator PiP video | Record yourself speaking the script |
 
 ### GIF Conversion Command
 
 ```bash
-ffmpeg -i assets/claude-code-install.gif \
+ffmpeg -i assets/codex-code-install.gif \
   -movflags faststart \
   -pix_fmt yuv420p \
   -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" \
@@ -37,7 +37,7 @@ Recording specs: 1920x1080, 30fps
 
 | File | Duration | Description | How to Create |
 |------|----------|-------------|---------------|
-| `remotion/public/audio/voiceover.mp3` | ~2:30 | Narration from VOICEOVER-SCRIPT.md | `/generate-voiceover` |
+| `remotion/public/audio/voiceover.mp3` | ~2:30 | Narration from VOICEOVER-SCRIPT.md | `$generate-voiceover` |
 | `remotion/public/audio/background-music.mp3` | ~3:00 | Subtle tech ambient | `python tools/music.py` |
 
 ### Voiceover Generation
@@ -66,8 +66,8 @@ These assets are tracked in the repo:
 |------|--------|
 | `remotion/public/images/ds-logo.png` | ✅ Included |
 | `remotion/public/images/embedded-app-icon.png` | ✅ Included |
-| `assets/claude-code-install.gif` | ✅ Included (needs conversion) |
-| `assets/claude-desktop-install.gif` | ✅ Included (alternative) |
+| `assets/codex-code-install.gif` | ✅ Included (needs conversion) |
+| `assets/codex-desktop-install.gif` | ✅ Included (alternative) |
 
 ## Directory Structure After Assets
 

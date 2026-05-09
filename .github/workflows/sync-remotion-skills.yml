@@ -31,12 +31,12 @@ jobs:
           cp -r /tmp/remotion-skills/skills/remotion /tmp/upstream-copy
 
           # Compare against our copy
-          if diff -rq .claude/skills/remotion-official /tmp/upstream-copy > /dev/null 2>&1; then
+          if diff -rq .agents/skills/remotion-official /tmp/upstream-copy > /dev/null 2>&1; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No changes detected"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
-            CHANGED_COUNT=$(diff -rq .claude/skills/remotion-official /tmp/upstream-copy 2>/dev/null | wc -l | tr -d ' ')
+            CHANGED_COUNT=$(diff -rq .agents/skills/remotion-official /tmp/upstream-copy 2>/dev/null | wc -l | tr -d ' ')
             echo "changed_count=$CHANGED_COUNT" >> "$GITHUB_OUTPUT"
             echo "$CHANGED_COUNT file(s) changed"
           fi
@@ -44,8 +44,8 @@ jobs:
       - name: Sync files
         if: steps.diff.outputs.changed == 'true'
         run: |
-          rm -rf .claude/skills/remotion-official
-          cp -r /tmp/remotion-skills/skills/remotion .claude/skills/remotion-official
+          rm -rf .agents/skills/remotion-official
+          cp -r /tmp/remotion-skills/skills/remotion .agents/skills/remotion-official
 
       - name: Create pull request
         if: steps.diff.outputs.changed == 'true'

@@ -1,11 +1,11 @@
 {
-  "name": "claude-code-video-toolkit",
+  "name": "codex-code-video-toolkit",
   "version": "0.15.0",
-  "description": "AI-native video production workspace for Claude Code",
-  "repository": "https://github.com/digitalsamba/claude-code-video-toolkit",
+  "description": "AI-native video production workspace for Codex",
+  "repository": "https://github.com/estrindavid/codex-code-video-toolkit",
   "skills": {
     "remotion-official": {
-      "path": ".claude/skills/remotion-official/",
+      "path": ".agents/skills/remotion-official/",
       "description": "Official Remotion framework knowledge (synced from remotion-dev/skills)",
       "status": "stable",
       "upstream": "https://github.com/remotion-dev/skills",
@@ -13,42 +13,42 @@
       "updated": "2026-02-19"
     },
     "remotion": {
-      "path": ".claude/skills/remotion/",
+      "path": ".agents/skills/remotion/",
       "description": "Toolkit-specific Remotion patterns — custom transitions, shared components, conventions",
       "status": "stable",
       "created": "2025-12-04",
       "updated": "2026-02-19"
     },
     "elevenlabs": {
-      "path": ".claude/skills/elevenlabs/",
+      "path": ".agents/skills/elevenlabs/",
       "description": "ElevenLabs audio - TTS, voice cloning, music, SFX",
       "status": "stable",
       "created": "2025-12-04",
       "updated": "2025-12-04"
     },
     "ffmpeg": {
-      "path": ".claude/skills/ffmpeg/",
+      "path": ".agents/skills/ffmpeg/",
       "description": "FFmpeg video/audio processing for Remotion assets",
       "status": "beta",
       "created": "2025-12-08",
       "updated": "2025-12-09"
     },
     "playwright-recording": {
-      "path": ".claude/skills/playwright-recording/",
+      "path": ".agents/skills/playwright-recording/",
       "description": "Playwright browser recording for demo videos",
       "status": "beta",
       "created": "2025-12-08",
       "updated": "2025-12-10"
     },
     "frontend-design": {
-      "path": ".claude/skills/frontend-design/",
+      "path": ".agents/skills/frontend-design/",
       "description": "Visual design refinement for distinctive, production-grade aesthetics",
       "status": "stable",
       "created": "2025-12-10",
       "updated": "2025-12-13"
     },
     "qwen-edit": {
-      "path": ".claude/skills/qwen-edit/",
+      "path": ".agents/skills/qwen-edit/",
       "description": "AI image editing prompting patterns and best practices for Qwen-Image-Edit",
       "status": "stable",
       "category": "image-editing",
@@ -57,28 +57,28 @@
       "updated": "2026-01-05"
     },
     "runpod": {
-      "path": ".claude/skills/runpod/",
+      "path": ".agents/skills/runpod/",
       "description": "Cloud GPU setup, Docker images, endpoint management, troubleshooting",
       "status": "stable",
       "created": "2026-02-23",
       "updated": "2026-02-24"
     },
     "acestep": {
-      "path": ".claude/skills/acestep/",
+      "path": ".agents/skills/acestep/",
       "description": "AI music generation — prompt engineering, scene presets, lyrics formatting, video production integration",
       "status": "beta",
       "created": "2026-03-22",
       "updated": "2026-03-22"
     },
     "ltx2": {
-      "path": ".claude/skills/ltx2/",
+      "path": ".agents/skills/ltx2/",
       "description": "AI video generation — prompting guide, parameters, video production use cases (b-roll, animated slides, portraits)",
       "status": "beta",
       "created": "2026-03-25",
       "updated": "2026-04-08"
     },
     "moviepy": {
-      "path": ".claude/skills/moviepy/",
+      "path": ".agents/skills/moviepy/",
       "description": "Python video composition with moviepy 2.x — overlaying text on LTX-2/SadTalker output, single-file build.py video projects",
       "status": "beta",
       "created": "2026-04-08",
@@ -87,91 +87,91 @@
   },
   "commands": {
     "video": {
-      "path": ".claude/commands/video.md",
+      "path": ".agents/skills/video/SKILL.md",
       "description": "Video projects - list, resume, or create new",
       "status": "stable",
       "created": "2025-12-09",
       "updated": "2025-12-09"
     },
     "brand": {
-      "path": ".claude/commands/brand.md",
+      "path": ".agents/skills/brand/SKILL.md",
       "description": "Brand profiles - list, edit, or create new",
       "status": "stable",
       "created": "2025-12-09",
       "updated": "2025-12-09"
     },
     "template": {
-      "path": ".claude/commands/template.md",
+      "path": ".agents/skills/template/SKILL.md",
       "description": "List available templates and their features",
       "status": "stable",
       "created": "2025-12-09",
       "updated": "2025-12-09"
     },
     "skills": {
-      "path": ".claude/commands/skills.md",
+      "path": ".agents/skills/skills/SKILL.md",
       "description": "List installed skills or create new ones",
       "status": "stable",
       "created": "2025-12-10",
       "updated": "2025-12-10"
     },
     "record-demo": {
-      "path": ".claude/commands/record-demo.md",
+      "path": ".agents/skills/record-demo/SKILL.md",
       "description": "Guided Playwright recording with interactive or script mode",
       "status": "stable",
       "created": "2025-12-08",
       "updated": "2025-12-10"
     },
     "generate-voiceover": {
-      "path": ".claude/commands/generate-voiceover.md",
+      "path": ".agents/skills/generate-voiceover/SKILL.md",
       "description": "Generate TTS voiceover using ElevenLabs or Qwen3-TTS",
       "status": "stable",
       "created": "2025-12-08",
       "updated": "2026-02-19"
     },
     "contribute": {
-      "path": ".claude/commands/contribute.md",
+      "path": ".agents/skills/contribute/SKILL.md",
       "description": "Share improvements - issues, PRs, skills, templates",
       "status": "stable",
       "created": "2025-12-10",
       "updated": "2025-12-10"
     },
     "scene-review": {
-      "path": ".claude/commands/scene-review.md",
+      "path": ".agents/skills/scene-review/SKILL.md",
       "description": "Scene-by-scene review in Remotion Studio before voiceover",
       "status": "stable",
       "created": "2025-12-10",
       "updated": "2025-12-10"
     },
     "design": {
-      "path": ".claude/commands/design.md",
+      "path": ".agents/skills/design/SKILL.md",
       "description": "Focused design refinement session for a scene",
       "status": "stable",
       "created": "2025-12-10",
       "updated": "2025-12-13"
     },
     "versions": {
-      "path": ".claude/commands/versions.md",
+      "path": ".agents/skills/versions/SKILL.md",
       "description": "Check dependency versions and toolkit updates",
       "status": "stable",
       "created": "2025-12-20",
       "updated": "2025-12-20"
     },
     "redub": {
-      "path": ".claude/commands/redub.md",
+      "path": ".agents/skills/redub/SKILL.md",
       "description": "Redub video with a different voice (transcribe + TTS)",
       "status": "beta",
       "created": "2025-12-28",
       "updated": "2025-12-28"
     },
     "voice-clone": {
-      "path": ".claude/commands/voice-clone.md",
+      "path": ".agents/skills/voice-clone/SKILL.md",
       "description": "Record, test, and save a cloned voice to a brand profile",
       "status": "beta",
       "created": "2026-02-19",
       "updated": "2026-02-19"
     },
     "setup": {
-      "path": ".claude/commands/setup.md",
+      "path": ".agents/skills/setup/SKILL.md",
       "description": "First-time toolkit setup - cloud GPU, file transfer, voice, and prerequisites",
       "status": "beta",
       "created": "2026-03-23",
@@ -605,7 +605,10 @@
         ],
         "perScenePrompts": "--prompts-file scenes.json",
         "resume": "auto-skips existing clips",
-        "progress": ["json", "human"],
+        "progress": [
+          "json",
+          "human"
+        ],
         "prefix": "chain (default)"
       },
       "envVars": [
@@ -1002,7 +1005,7 @@
     },
     "digital-samba-skill-demo": {
       "path": "examples/digital-samba-skill-demo/",
-      "description": "Marketing video for Claude Code skill",
+      "description": "Marketing video for Codex skill",
       "template": "product-demo",
       "complexity": "intermediate",
       "contributor": "Digital Samba"

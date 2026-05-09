@@ -1,18 +1,18 @@
 # Add Video Calls to Your App in an Afternoon
 
-*Introducing the Digital Samba skill for Claude*
+*Introducing the Digital Samba skill for Codex*
 
 ---
 
 Video conferencing integration usually means weeks of work - wading through API docs, wrangling authentication, dealing with WebRTC headaches. There's a faster way.
 
-The Digital Samba skill gives Claude everything it needs to build video apps with you. A few simple commands to install, and Claude learns our REST API, SDK methods, and common integration patterns. No configuration needed.
+The Digital Samba skill gives Codex everything it needs to build video apps with you. A few simple commands to install, and Codex learns our REST API, SDK methods, and common integration patterns. No configuration needed.
 
 ## See It in Action
 
 [VIDEO EMBED]
 
-We asked Claude to create an interview room app from scratch. It picked Next.js, set up API routes, and handled JWT authentication - all using patterns from the skill. A few minutes later, we had a working app.
+We asked Codex to create an interview room app from scratch. It picked Next.js, set up API routes, and handled JWT authentication - all using patterns from the skill. A few minutes later, we had a working app.
 
 Interviewers create a room, get a code to share. Candidates enter the code and join. The API handles the room, enables recording, generates tokens. Simple flow, no fuss.
 
@@ -27,14 +27,14 @@ The generated code follows best practices - secure JWT token generation, proper 
 
 ## How to Install
 
-**Claude Code (CLI)**
+**Codex (CLI)**
 
 ```bash
 git clone https://github.com/digitalsamba/digital-samba-skill.git
-cp -r digital-samba-skill/.claude/skills/digital-samba your-project/.claude/skills/
+cp -r digital-samba-skill/.agents/skills/digital-samba your-project/.agents/skills/
 ```
 
-**Claude Desktop / Claude.ai**
+**Codex Desktop / Codex.ai**
 
 1. Download the [latest release ZIP](https://github.com/digitalsamba/digital-samba-skill/releases/latest)
 2. Go to Settings → Skills

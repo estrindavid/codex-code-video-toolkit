@@ -24,13 +24,13 @@ That's it. ~15 seconds later you have `out.mp4` — a silent text-on-colour spot
 
 Use moviepy for sub-30s, tightly-timed content where every frame matters and where text must be deterministic — trailers, promos, news lower thirds, social captions. The Remotion templates (`sprint-review`, `product-demo`) are designed for longer, design-system-driven work; moviepy is the right tool for ad-style spots.
 
-See the **moviepy** skill (`.claude/skills/moviepy/SKILL.md`) for the full pattern guide and the genres where this approach shines.
+See the **moviepy** skill (`.agents/skills/moviepy/SKILL.md`) for the full pattern guide and the genres where this approach shines.
 
 ## What this example demonstrates
 
 1. **PIL → ImageClip text rendering.** moviepy 2.x's `TextClip(method='label')` clips letter ascenders and descenders. The fix is to render text to a transparent PNG via Pillow and load it as an `ImageClip`. The cache key is the content hash so re-builds are free. See `render_text_png()` in `build.py`.
 
-2. **Audio-anchored timeline.** The comment block at the top of `build()` is the source of truth. Every visual element has an absolute `start=` referencing it. Drift is impossible because durations come from real audio (when present) rather than estimates. See **CLAUDE.md → Video Timing → Audio-Anchored Timelines**.
+2. **Audio-anchored timeline.** The comment block at the top of `build()` is the source of truth. Every visual element has an absolute `start=` referencing it. Drift is impossible because durations come from real audio (when present) rather than estimates. See **AGENTS.md → Video Timing → Audio-Anchored Timelines**.
 
 3. **Optional VO + ducked music.** `build_audio()` checks for per-scene mp3 files and mixes them only if all are present, otherwise renders silent. Music is ducked to 22% volume under VO at 115% — tuned defaults from production use.
 

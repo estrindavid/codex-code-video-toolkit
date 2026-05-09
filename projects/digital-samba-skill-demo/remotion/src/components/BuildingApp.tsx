@@ -6,24 +6,24 @@ import {
   useVideoConfig,
 } from "remotion";
 
-// Simulated Claude building app - terminal output lines
+// Simulated Codex building app - terminal output lines
 const TERMINAL_LINES = [
-  { type: "prompt", text: "$ claude" },
+  { type: "prompt", text: "$ codex" },
   { type: "input", text: "> Build an interview room app with Digital Samba" },
   { type: "output", text: "" },
-  { type: "claude", text: "I'll create an interview room application using the Digital Samba SDK." },
-  { type: "claude", text: "Let me set up the project structure..." },
+  { type: "codex", text: "I'll create an interview room application using the Digital Samba SDK." },
+  { type: "codex", text: "Let me set up the project structure..." },
   { type: "output", text: "" },
   { type: "action", text: "Creating src/app/page.tsx..." },
   { type: "action", text: "Creating src/app/room/[id]/page.tsx..." },
   { type: "action", text: "Creating src/lib/digital-samba.ts..." },
   { type: "action", text: "Creating src/components/RoomCard.tsx..." },
   { type: "output", text: "" },
-  { type: "claude", text: "Setting up JWT authentication with your API keys..." },
+  { type: "codex", text: "Setting up JWT authentication with your API keys..." },
   { type: "action", text: "Creating src/app/api/token/route.ts..." },
   { type: "output", text: "" },
-  { type: "claude", text: "Adding the Digital Samba Embedded SDK integration..." },
-  { type: "action", text: "Installing @anthropic-ai/sdk..." },
+  { type: "codex", text: "Adding the Digital Samba Embedded SDK integration..." },
+  { type: "action", text: "Installing openai..." },
   { type: "success", text: "✓ Interview room app created successfully!" },
 ];
 
@@ -90,7 +90,7 @@ export const BuildingApp: React.FC = () => {
             margin: 0,
           }}
         >
-          Claude Builds the App
+          Codex Builds the App
         </h2>
       </div>
 
@@ -153,7 +153,7 @@ export const BuildingApp: React.FC = () => {
               />
             </div>
             <span style={{ color: "#666", fontSize: 14 }}>
-              Claude Code — Building Interview Room
+              Codex — Building Interview Room
             </span>
           </div>
 
@@ -234,7 +234,7 @@ export const BuildingApp: React.FC = () => {
                 lineHeight: 1.6,
               }}
             >
-              We gave Claude creative freedom to interpret what an online
+              We gave Codex creative freedom to interpret what an online
               interview experience should look like.
             </p>
           </div>
@@ -266,7 +266,7 @@ function getLineStyle(type: string): React.CSSProperties {
       return { ...baseStyle, color: "#00D4AA" };
     case "input":
       return { ...baseStyle, color: "#D97706", paddingLeft: 20 };
-    case "claude":
+    case "codex":
       return { ...baseStyle, color: "#0066FF" };
     case "action":
       return { ...baseStyle, color: "#888", paddingLeft: 20 };

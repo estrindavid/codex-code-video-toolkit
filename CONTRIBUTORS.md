@@ -1,6 +1,6 @@
 # Contributors
 
-Thank you to everyone who has contributed to claude-code-video-toolkit!
+Thank you to everyone who has contributed to codex-code-video-toolkit!
 
 ## Organizations
 
@@ -18,7 +18,7 @@ Thank you to everyone who has contributed to claude-code-video-toolkit!
 
 **Share an example project:**
 ```
-/contribute → Option 5 (Share an example project)
+$contribute → Option 5 (Share an example project)
 ```
 Your name/organization and website will be credited in:
 - This file
@@ -29,8 +29,8 @@ Your name/organization and website will be credited in:
 Submit a PR and you'll be added to the contributors list.
 
 **Report issues or suggest features:**
-Open an issue at [github.com/digitalsamba/claude-code-video-toolkit/issues](https://github.com/digitalsamba/claude-code-video-toolkit/issues)
+Open an issue at [github.com/estrindavid/codex-code-video-toolkit/issues](https://github.com/estrindavid/codex-code-video-toolkit/issues)
 
 ---
 
-*Built with Claude Code* 🤖
+*Built with Codex* 🤖

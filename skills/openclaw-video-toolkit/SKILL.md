@@ -1,6 +1,6 @@
 ---
 name: video_toolkit
-description: Create professional videos autonomously using claude-code-video-toolkit — AI voiceovers, image generation, music, talking heads, and Remotion rendering.
+description: Create professional videos autonomously using codex-code-video-toolkit — AI voiceovers, image generation, music, talking heads, and Remotion rendering.
 metadata:
   openclaw:
     emoji: "🎬"
@@ -19,7 +19,7 @@ Create professional explainer videos from a text brief. The toolkit uses open-so
 The toolkit lives at a fixed path. **ALWAYS `cd` here before running any tool command.**
 
 ```bash
-TOOLKIT=~/.openclaw/workspace/claude-code-video-toolkit
+TOOLKIT=~/.openclaw/workspace/codex-code-video-toolkit
 cd $TOOLKIT
 ```
 
@@ -46,7 +46,7 @@ See the **Progress Reporting** section below for output format and stage definit
 **Any tool command that takes more than 30 seconds MUST use `exec` with `yieldMs` so you can report progress to the user live.** This includes: batch FLUX generation, chain_video, SadTalker, music generation, and any multi-scene pipeline.
 
 ```
-exec command:"cd ~/.openclaw/workspace/claude-code-video-toolkit && python3 tools/chain_video.py --output-dir /path/ --progress json ..." yieldMs:10000
+exec command:"cd ~/.openclaw/workspace/codex-code-video-toolkit && python3 tools/chain_video.py --output-dir /path/ --progress json ..." yieldMs:10000
 ```
 
 **The polling loop:**
@@ -68,7 +68,7 @@ exec command:"cd ~/.openclaw/workspace/claude-code-video-toolkit && python3 tool
 ### Step 1: Check Current State
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 python3 tools/verify_setup.py
 ```
 
@@ -77,7 +77,7 @@ If everything shows `[x]`, skip to "Quick Test" below. Otherwise continue setup.
 ### Step 2: Install Python Dependencies
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 pip3 install --break-system-packages -r tools/requirements.txt
 ```
 
@@ -88,7 +88,7 @@ Note: `--break-system-packages` is needed on Debian/Ubuntu with managed Python (
 The toolkit needs cloud GPU endpoint URLs in `.env`. Check if `.env` exists and has Modal endpoints:
 
 ```bash
-cat ~/.openclaw/workspace/claude-code-video-toolkit/.env | grep MODAL
+cat ~/.openclaw/workspace/codex-code-video-toolkit/.env | grep MODAL
 ```
 
 If Modal endpoints are configured, you're ready. If not, **ask the user to provide Modal endpoint URLs** or set up Modal:
@@ -98,7 +98,7 @@ pip3 install --break-system-packages modal
 python3 -m modal setup   # Opens browser for authentication
 
 # Deploy each tool — capture the endpoint URL from output
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 modal deploy docker/modal-qwen3-tts/app.py
 modal deploy docker/modal-flux2/app.py
 modal deploy docker/modal-music-gen/app.py
@@ -138,14 +138,14 @@ R2_BUCKET_NAME=video-toolkit
 ### Step 4: Verify and Quick Test
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 python3 tools/verify_setup.py
 ```
 
 All tools should show `[x]`. Then run a quick test to confirm the GPU pipeline works:
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 python3 tools/qwen3_tts.py --text "Hello, this is a test." --speaker Ryan --tone warm --output /tmp/video-toolkit-test.mp3 --cloud modal
 ```
 
@@ -162,7 +162,7 @@ If you get a valid .mp3 file, setup is complete. If it fails, check:
 ### Step 1: Create Project
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 cp -r templates/product-demo projects/PROJECT_NAME
 cd projects/PROJECT_NAME
 npm install
@@ -218,7 +218,7 @@ The problem statement goes here. Keep it punchy and relatable.
 **CRITICAL: All commands below MUST be run from the toolkit root, not the project directory.**
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 ```
 
 #### 4a. Background Music
@@ -226,7 +226,7 @@ cd ~/.openclaw/workspace/claude-code-video-toolkit
 Default provider is **acemusic** (official cloud API, free key). No GPU required. Falls back to Modal/RunPod for self-hosted.
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 
 # Using acemusic cloud API (default — best quality, XL Turbo 4B model)
 python3 tools/music_gen.py \
@@ -259,7 +259,7 @@ Setup: `echo "ACEMUSIC_API_KEY=your_key" >> .env` (get free key at acemusic.ai/a
 Generate ONE .mp3 file PER SCENE. Do NOT generate a single voiceover file.
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 
 # Scene 01
 python3 tools/qwen3_tts.py \
@@ -283,7 +283,7 @@ python3 tools/qwen3_tts.py \
 
 For voice cloning (needs a reference recording):
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 python3 tools/qwen3_tts.py \
   --text "Text to speak" \
   --ref-audio assets/voices/reference.m4a \
@@ -295,7 +295,7 @@ python3 tools/qwen3_tts.py \
 #### 4c. Scene Images
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 python3 tools/flux2.py \
   --prompt "Dark tech background with blue geometric grid, cinematic lighting" \
   --width 1920 --height 1080 \
@@ -307,7 +307,7 @@ Image presets (use `--preset` instead of `--prompt --width --height`):
 `title-bg`, `problem`, `solution`, `demo-bg`, `stats-bg`, `cta`, `thumbnail`, `portrait-bg`
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 python3 tools/flux2.py \
   --preset title-bg \
   --output projects/PROJECT_NAME/public/images/title-bg.png \
@@ -319,7 +319,7 @@ python3 tools/flux2.py \
 Generate AI video clips for b-roll cutaways, animated slide backgrounds, or intro/outro sequences:
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 
 # B-roll clip from text
 python3 tools/ltx2.py \
@@ -359,7 +359,7 @@ Use in Remotion compositions with `<OffthreadVideo>`:
 Generate a sequence of video clips where each scene flows from the last frame of the previous one. **This runs as a single command** — no manual nudging between scenes.
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 
 # Chain scenes 1-30 from a directory of FLUX images
 python3 tools/chain_video.py \
@@ -417,7 +417,7 @@ python3 tools/chain_video.py \
 **CRITICAL: Run with `yieldMs` for live progress reporting.** Don't break it into per-scene tool calls — OpenClaw's agent run ends between calls, causing the sequence to stall. Instead, use `exec` with `yieldMs` so you stay in the loop and can relay progress to the user:
 
 ```
-exec command:"cd ~/.openclaw/workspace/claude-code-video-toolkit && python3 tools/chain_video.py --scenes-dir /path/to/images/ --output-dir /path/to/output/ --prompts-file scenes.json --progress json" yieldMs:10000
+exec command:"cd ~/.openclaw/workspace/codex-code-video-toolkit && python3 tools/chain_video.py --scenes-dir /path/to/images/ --output-dir /path/to/output/ --prompts-file scenes.json --progress json" yieldMs:10000
 ```
 
 **How this works:**
@@ -434,7 +434,7 @@ exec command:"cd ~/.openclaw/workspace/claude-code-video-toolkit && python3 tool
 Generate a presenter portrait, then animate per-scene clips:
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 
 # 1. Generate portrait
 python3 tools/flux2.py \
@@ -466,7 +466,7 @@ python3 tools/sadtalker.py \
 Create scene variants from existing images:
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 python3 tools/image_edit.py \
   --input projects/PROJECT_NAME/public/images/title-bg.png \
   --prompt "Make it darker with red tones, more ominous" \
@@ -477,7 +477,7 @@ python3 tools/image_edit.py \
 #### 4f. Upscaling (optional)
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 python3 tools/upscale.py \
   --input projects/PROJECT_NAME/public/images/some-image.png \
   --output projects/PROJECT_NAME/public/images/some-image-4x.png \
@@ -489,7 +489,7 @@ python3 tools/upscale.py \
 **ALWAYS do this after generating voiceover.** Audio duration differs from estimates.
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 for f in projects/PROJECT_NAME/public/audio/scenes/*.mp3; do
   echo "$(basename $f): $(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")s"
 done
@@ -502,7 +502,7 @@ Example: if `01.mp3` is 6.8s, set scene 1 `durationSeconds` to `9` (ceil(6.8 + 2
 ### Step 6: Review Still Frames
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit/projects/PROJECT_NAME
+cd ~/.openclaw/workspace/codex-code-video-toolkit/projects/PROJECT_NAME
 npx remotion still src/index.ts ProductDemo --frame=100 --output=/tmp/review-scene1.png
 npx remotion still src/index.ts ProductDemo --frame=400 --output=/tmp/review-scene2.png
 ```
@@ -512,7 +512,7 @@ Check: text truncation, animation timing, narrator PiP positioning, background c
 ### Step 7: Render
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit/projects/PROJECT_NAME
+cd ~/.openclaw/workspace/codex-code-video-toolkit/projects/PROJECT_NAME
 npm run render
 ```
 
@@ -568,7 +568,7 @@ All cloud GPU tools support structured progress output for automated monitoring.
 Add `--progress json` to any tool command to get JSON Lines on stderr:
 
 ```bash
-cd ~/.openclaw/workspace/claude-code-video-toolkit
+cd ~/.openclaw/workspace/codex-code-video-toolkit
 python3 tools/music_gen.py \
   --preset corporate-bg --duration 60 \
   --output projects/PROJECT_NAME/public/audio/bg-music.mp3 \

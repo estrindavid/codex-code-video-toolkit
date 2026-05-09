@@ -4,21 +4,21 @@ This directory contains the schema and documentation for multi-session video pro
 
 ## Overview
 
-Video projects span multiple Claude Code sessions. The project system provides:
+Video projects span multiple Codex sessions. The project system provides:
 
 1. **Structured state** via `project.json` in each project
 2. **Filesystem reconciliation** - comparing intent vs reality
 3. **Session continuity** - instant context on resume
-4. **Auto-generated CLAUDE.md** - human+Claude readable status
+4. **Auto-generated AGENTS.md** - human+Codex readable status
 
 ## Resuming a Project
 
-Projects persist across Claude Code sessions. To resume:
+Projects persist across Codex sessions. To resume:
 
 ### Quick Resume
 
 ```
-/video
+$video
 ```
 
 This scans `projects/*/project.json`, shows your projects, and lets you pick one to resume.
@@ -26,7 +26,7 @@ This scans `projects/*/project.json`, shows your projects, and lets you pick one
 ### Example Resume Session
 
 ```
-$ /video
+$video
 
 Found 2 video projects:
 
@@ -61,7 +61,7 @@ Resuming: product-launch (product-demo)
 ## Next Actions
 
 1. **Record export demo** (Scene 5)
-   Run `/record-demo` or provide external video
+   Run `$record-demo` or provide external video
 
 Ready to record the export demo?
 ```
@@ -72,7 +72,7 @@ Ready to record the export demo?
 2. **Reconcile filesystem**: Compare expected assets vs actual files in `public/demos/`, `public/audio/`
 3. **Update status**: Mark newly-found assets as `asset-present`, flag missing assets
 4. **Add session entry**: `{ date: "2024-12-11", summary: "Resumed project" }`
-5. **Regenerate CLAUDE.md**: Update the project's status document
+5. **Regenerate AGENTS.md**: Update the project's status document
 6. **Present next actions**: Guide user to what needs doing
 
 ### Project Files Used for Context
@@ -80,12 +80,12 @@ Ready to record the export demo?
 | File | Purpose |
 |------|---------|
 | `project.json` | Machine-readable state (phase, scenes, assets, sessions) |
-| `CLAUDE.md` | Auto-generated human-readable status |
+| `AGENTS.md` | Auto-generated human-readable status |
 | `VOICEOVER-SCRIPT.md` | Scene-by-scene narration script |
 | `public/demos/*.mp4` | Recorded demo assets |
 | `public/audio/*.mp3` | Voiceover and music files |
 
-### Manual Resume (Without /video)
+### Manual Resume (Without $video)
 
 If you just need to preview or render without the guided workflow:
 
@@ -95,7 +95,7 @@ npm run studio    # Open Remotion Studio
 npm run render    # Render final video
 ```
 
-Claude Code will still have context via the project's `CLAUDE.md`.
+Codex will still have context via the project's `AGENTS.md`.
 
 ## Project Lifecycle
 
@@ -148,7 +148,7 @@ See `types.ts` for full TypeScript definitions. Key structures:
 | Type | Asset Required | How to Create |
 |------|----------------|---------------|
 | `slide` | No | Template generates |
-| `playwright` | Yes | `/record-demo` command |
+| `playwright` | Yes | `$record-demo` command |
 | `external` | Yes | User provides file |
 | `screenshot` | Yes | Playwright or user provides |
 
@@ -158,7 +158,7 @@ The project system follows these principles:
 
 1. **project.json is intent** - What the user planned
 2. **Filesystem is truth** - What actually exists
-3. **Claude reconciles** - Updates status based on reality
+3. **Codex reconciles** - Updates status based on reality
 
 ### Reconciliation Logic
 
@@ -179,7 +179,7 @@ For each scene with visual.asset:
 
 ## Session History
 
-The `sessions` array tracks work across Claude Code sessions:
+The `sessions` array tracks work across Codex sessions:
 
 ```json
 "sessions": [
@@ -189,11 +189,11 @@ The `sessions` array tracks work across Claude Code sessions:
 ]
 ```
 
-This helps Claude understand context when resuming.
+This helps Codex understand context when resuming.
 
-## Auto-Generated CLAUDE.md
+## Auto-Generated AGENTS.md
 
-Each project gets an auto-generated `CLAUDE.md` with:
+Each project gets an auto-generated `AGENTS.md` with:
 
 - Current phase and status
 - Scene checklist with ✅/⬜ markers
@@ -201,7 +201,7 @@ Each project gets an auto-generated `CLAUDE.md` with:
 - Next actions
 - Quick commands
 
-This provides instant context even without running `/video`.
+This provides instant context even without running `$video`.
 
 **Template:**
 
@@ -228,7 +228,7 @@ This provides instant context even without running `/video`.
 1. {next_action_1}
 2. {next_action_2}
 
-## Commands
+## Workflow Skills
 
 \`\`\`bash
 npm run studio    # Preview
@@ -239,20 +239,20 @@ npm run render    # Final render
 *Auto-generated from project.json*
 ```
 
-## Integration with Commands
+## Integration with Workflow Skills
 
-### /video
+### $video
 
 The main entry point. Scans projects, offers resume or new.
 
-### /record-demo
+### $record-demo
 
 After recording, updates the scene's status:
 - Sets `status: "asset-present"`
 - Updates `visual.asset` path if needed
 - Adds session entry
 
-### /generate-voiceover
+### $generate-voiceover
 
 After generating:
 - Sets `audio.voiceover.status: "present"`

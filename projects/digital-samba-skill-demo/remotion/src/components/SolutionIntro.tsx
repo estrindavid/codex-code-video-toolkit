@@ -32,7 +32,7 @@ export const SolutionIntro: React.FC = () => {
   });
 
   // Typing animation for terminal
-  const terminalText = "claude --skill digital-samba";
+  const terminalText = "codex --skill digital-samba";
   const typedChars = Math.floor(
     interpolate(frame, [60, 120], [0, terminalText.length], {
       extrapolateLeft: "clamp",
@@ -167,7 +167,7 @@ export const SolutionIntro: React.FC = () => {
         >
           Introducing the{" "}
           <span style={{ color: "#0066FF" }}>Digital Samba</span> skill for
-          Claude Code
+          Codex
         </p>
       </div>
     </AbsoluteFill>

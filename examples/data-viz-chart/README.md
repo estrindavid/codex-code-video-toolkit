@@ -2,7 +2,7 @@
 
 An animated time-series chart with deterministic text overlay. Demonstrates the **"matplotlib for data, moviepy for trustworthy text"** pattern — the natural production pipeline for news graphics, dashboards, and any data-driven scene where the labels need to be exact.
 
-Renders out of the box with the included `data/star_series.json` (real GitHub star history of `digitalsamba/claude-code-video-toolkit`).
+Renders out of the box with the included `data/star_series.json` (real GitHub star history of `estrindavid/codex-code-video-toolkit`).
 
 ## Quick start
 
@@ -29,7 +29,7 @@ First run takes ~30 seconds (matplotlib renders 450 frames, moviepy composites).
 
 This is exactly how real news graphics are produced. The data layer comes from a data tool (R, Python, D3); the text layer is composited deterministically on top so that names, sources, and headline figures are guaranteed correct. AI video generation models cannot guarantee any of that — that's the whole reason this pattern exists.
 
-The **moviepy** skill (`.claude/skills/moviepy/SKILL.md`) has the full "trustworthy text" framing and the genres where this approach matters most.
+The **moviepy** skill (`.agents/skills/moviepy/SKILL.md`) has the full "trustworthy text" framing and the genres where this approach matters most.
 
 ## What this example demonstrates
 
@@ -69,7 +69,7 @@ python3 ../../tools/voiceover.py \
     --scene-dir public/audio/scenes
 ```
 
-Then read the audio durations from the JSON output and anchor your text overlays to absolute timestamps in `build()`. See **CLAUDE.md → Video Timing → Audio-Anchored Timelines** for the pattern.
+Then read the audio durations from the JSON output and anchor your text overlays to absolute timestamps in `build()`. See **AGENTS.md → Video Timing → Audio-Anchored Timelines** for the pattern.
 
 ## File layout
 
@@ -98,4 +98,4 @@ The matplotlib styling is in `render_chart_animation()`:
 
 - **moviepy skill** — full pattern reference, genre fits, gotchas
 - **examples/quick-spot** — sibling example showing the audio-anchored timeline pattern for ad-style spots
-- **CLAUDE.md → Video Timing → Audio-Anchored Timelines** — pairing this with per-scene voiceover
+- **AGENTS.md → Video Timing → Audio-Anchored Timelines** — pairing this with per-scene voiceover

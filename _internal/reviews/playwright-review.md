@@ -2,7 +2,7 @@
 
 **Skill:** playwright-recording
 **Status:** draft → beta (fixes applied)
-**Reviewer:** Claude
+**Reviewer:** Codex
 **Date:** 2025-12-09
 
 ## Executive Summary
@@ -214,7 +214,7 @@ This Playwright review follows the same rigor, but the skill needs more work bef
 
 ### Phase D: Slash Command (Future)
 
-The `/record-demo` command in the backlog would wrap all this complexity:
+The `$record-demo` command in the backlog would wrap all this complexity:
 - Prompt for URL, output name, viewport
 - Handle frame rate conversion automatically
 - Output duration in format ready for sprint-config.ts
@@ -246,4 +246,4 @@ The `/record-demo` command in the backlog would wrap all this complexity:
 1. Apply Phase A fixes to promote to beta
 2. Re-run test recording to verify frame rate fix
 3. Update toolkit-registry.json status after fixes applied
-4. Consider implementing `/record-demo` slash command
+4. Consider implementing `$record-demo` slash command

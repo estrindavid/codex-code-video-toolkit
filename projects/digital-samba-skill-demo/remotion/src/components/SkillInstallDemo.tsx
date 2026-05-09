@@ -139,7 +139,7 @@ export const SkillInstallDemo: React.FC = () => {
                 fontFamily: "monospace",
               }}
             >
-              Terminal — claude-code
+              Terminal — codex-code
             </div>
           </div>
 

@@ -76,7 +76,7 @@ export const AppWalkthrough: React.FC = () => {
             margin: "12px 0 0 0",
           }}
         >
-          Built entirely by Claude using the Digital Samba skill
+          Built entirely by Codex using the Digital Samba skill
         </p>
       </div>
 

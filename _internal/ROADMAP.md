@@ -1,17 +1,17 @@
 # Video Toolkit Roadmap
 
-This document tracks the development of claude-code-video-toolkit.
+This document tracks the development of codex-code-video-toolkit.
 
-**Repository:** https://github.com/digitalsamba/claude-code-video-toolkit
+**Repository:** https://github.com/estrindavid/codex-code-video-toolkit
 
 ---
 
 ## Vision
 
-An open-source, AI-native video production workspace for Claude Code, featuring:
+An open-source, AI-native video production workspace for Codex, featuring:
 - Reusable templates for common video types
 - Brand profiles for consistent visual identity
-- Claude skills providing deep domain knowledge
+- Codex skills providing deep domain knowledge
 - Automated asset pipelines (recording, conversion, audio generation)
 - Slash commands for guided workflows
 
@@ -31,7 +31,7 @@ An open-source, AI-native video production workspace for Claude Code, featuring:
 
 - [x] Sprint review template with theme system
 - [x] Config-driven video content
-- [x] `/video` slash command (unified project creation)
+- [x] `$video` slash command (unified project creation)
 - [x] Narrator PiP component
 - [x] Remotion skill (stable)
 - [x] ElevenLabs skill (stable)
@@ -48,8 +48,8 @@ An open-source, AI-native video production workspace for Claude Code, featuring:
 - [x] `sfx.py` - CLI for sound effects
 
 **Commands:**
-- [x] `/generate-voiceover` - streamlined audio generation
-- [x] `/record-demo` - guided Playwright recording
+- [x] `$generate-voiceover` - streamlined audio generation
+- [x] `$record-demo` - guided Playwright recording
 
 **Infrastructure:**
 - [x] Playwright recording setup (`playwright/`)
@@ -69,12 +69,12 @@ An open-source, AI-native video production workspace for Claude Code, featuring:
 **Brand Profiles:**
 - [x] Default brand profile
 - [x] Digital Samba brand profile
-- [x] `/brand` command - list, edit, or create brands
+- [x] `$brand` command - list, edit, or create brands
 
 **Templates:**
 - [x] Product demo template
-- [x] `/video` command - unified project management
-- [x] `/template` command - list available templates
+- [x] `$video` command - unified project management
+- [x] `$template` command - list available templates
 - [x] Shared component library (`lib/`)
 - [ ] Tutorial template
 - [ ] Changelog/release notes template
@@ -84,37 +84,37 @@ An open-source, AI-native video production workspace for Claude Code, featuring:
 - [x] Custom presentations: glitch, rgbSplit, zoomBlur, lightLeak, clockWipe, pixelate, checkerboard
 - [x] Re-exports official transitions: slide, fade, wipe, flip
 - [x] Transitions gallery showcase (`showcase/transitions/`)
-- [x] Documentation in Remotion skill and CLAUDE.md
+- [x] Documentation in Remotion skill and AGENTS.md
 
 **Template-Brand Integration:**
 - [x] Brand loader utility (`lib/brand.ts`)
 - [x] Templates use `brand.ts` for theming
-- [x] `/video` generates brand.ts from selected brand
+- [x] `$video` generates brand.ts from selected brand
 
 **Multi-Session Project System:**
 - [x] Project schema (`lib/project/types.ts`)
 - [x] Filesystem reconciliation
-- [x] Auto-generated CLAUDE.md per project
-- [x] `/skills` command
+- [x] Auto-generated AGENTS.md per project
+- [x] `$skills` command
 
 **Review & Validation:**
-- [x] `/scene-review` command - dedicated scene-by-scene review with Remotion Studio
+- [x] `$scene-review` command - dedicated scene-by-scene review with Remotion Studio
   - [x] Starts Remotion Studio for visual verification
   - [x] Walks through scenes one by one (not summary tables)
   - [x] Generic - works with any template's config
-  - [x] `/video` delegates to `/scene-review` when phase is `review`
-  - [x] `/generate-voiceover` warns if review incomplete
+  - [x] `$video` delegates to `$scene-review` when phase is `review`
+  - [x] `$generate-voiceover` warns if review incomplete
 - [ ] Pre-render review (timing, sync, polish)
 - [ ] Asset validation (ffprobe checks)
 - [ ] Enhancement suggestions
-- Note: `/review` name clashes with Claude Code built-in PR review - using `/scene-review`
+- Note: `/review` name clashes with Codex built-in PR review - using `$scene-review`
 
 **Qwen3-TTS Integration:**
 - [x] `tools/qwen3_tts.py` — standalone CLI tool
 - [x] `voiceover.py --provider qwen3` — per-scene generation
 - [x] Docker image: `ghcr.io/conalmullan/video-toolkit-qwen3-tts:latest`
 - [x] 9 built-in speakers, tone presets, voice cloning
-- [x] `/voice-clone` command — record, test, save cloned voice to brand
+- [x] `$voice-clone` command — record, test, save cloned voice to brand
 - [x] Temperature/top_p generation params for expressiveness control
 - [ ] Make Qwen3-TTS the default provider (replacing ElevenLabs)
 
@@ -143,7 +143,7 @@ An open-source, AI-native video production workspace for Claude Code, featuring:
 - [x] `MazeDecoration` — Animated isometric grid decoration
 
 **Contribution & Examples:**
-- [x] `/contribute` command
+- [x] `$contribute` command
 - [x] `examples/` directory
 - [x] CONTRIBUTORS.md
 
@@ -151,7 +151,7 @@ An open-source, AI-native video production workspace for Claude Code, featuring:
 - [x] Test new project creation with scene-centric flow
 - [ ] Test project resumption (multi-session)
 - [ ] Verify filesystem reconciliation
-- [x] Verify CLAUDE.md auto-generation
+- [x] Verify AGENTS.md auto-generation
 
 **Registry & Roadmap Alignment:**
 - [x] Update skill status table to include all current skills

@@ -1,7 +1,7 @@
 {
   "name": "digital-samba-skill-demo",
   "version": "1.0.0",
-  "description": "Marketing video for Digital Samba Claude Code skill",
+  "description": "Marketing video for Digital Samba Codex skill",
   "scripts": {
     "studio": "remotion studio",
     "render": "remotion render src/index.ts DigitalSambaSkillDemo out/digital-samba-skill-demo.mp4",

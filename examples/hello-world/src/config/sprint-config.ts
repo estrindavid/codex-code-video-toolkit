@@ -34,8 +34,8 @@ export const sprintConfig: SprintConfig = {
   },
 
   credits: [
-    { category: 'Built With', items: ['Claude Code', 'Remotion'] },
-    { category: 'Source', items: ['claude-code-video-toolkit'] },
+    { category: 'Built With', items: ['Codex', 'Remotion'] },
+    { category: 'Source', items: ['codex-code-video-toolkit'] },
   ],
 
   audio: {},

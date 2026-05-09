@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verify toolkit setup — checks prerequisites, cloud GPU, R2, and voice configuration.
 
-Run after /setup to confirm everything is working, or anytime to diagnose issues.
+Run after $setup to confirm everything is working, or anytime to diagnose issues.
 
 Usage:
     python3 tools/verify_setup.py           # Full check (no cloud calls)
@@ -397,9 +397,9 @@ def main():
         print(f"  Voice:          {'ready' if voice_ok else 'not configured'}")
         print()
         if all_ok and cloud_ok and r2_ok and voice_ok:
-            print("  All systems go! Run /video to create a video.")
+            print("  All systems go! Run $video to create a video.")
         elif all_ok:
-            print("  Basics ready. Run /setup to configure cloud features.")
+            print("  Basics ready. Run $setup to configure cloud features.")
         else:
             print("  Some prerequisites missing. Check above for details.")
         print("=" * 40)

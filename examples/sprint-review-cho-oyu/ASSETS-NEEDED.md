@@ -38,7 +38,7 @@ The `SplitScreen` component will combine them.
 
 | File | Duration | Description | How to Create |
 |------|----------|-------------|---------------|
-| `remotion/public/audio/voiceover.mp3` | ~3:00 | Narration from VOICEOVER-SCRIPT.md | `/generate-voiceover` |
+| `remotion/public/audio/voiceover.mp3` | ~3:00 | Narration from VOICEOVER-SCRIPT.md | `$generate-voiceover` |
 | `remotion/public/audio/background-music.mp3` | ~4:00 | Subtle background track | `python tools/music.py` |
 | `remotion/public/audio/sfx-whoosh.mp3` | ~1s | Transition sound | `python tools/sfx.py --preset whoosh` |
 | `remotion/public/audio/sfx-chime.mp3` | ~1s | Success sound | `python tools/sfx.py --preset chime` |

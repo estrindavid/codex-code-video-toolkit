@@ -1,6 +1,6 @@
 # Toolkit Backlog
 
-Ideas and enhancements for claude-code-video-toolkit. Items here are **not yet scheduled** - they're captured for future consideration.
+Ideas and enhancements for codex-code-video-toolkit. Items here are **not yet scheduled** - they're captured for future consideration.
 
 > **Note:** When an item is implemented, remove it from this file and add the change to `CHANGELOG.md`.
 
@@ -175,7 +175,7 @@ Render pipeline for:
 The documentation uses `python` but macOS and some systems require `python3`:
 - Detect which command is available at runtime
 - Add wrapper script or shell function
-- Update CLAUDE.md examples to be cross-platform
+- Update AGENTS.md examples to be cross-platform
 - Consider: `#!/usr/bin/env python3` shebangs for direct script execution
 
 ### Cost Tracking
@@ -196,7 +196,7 @@ Move GPU worker images from personal to org namespace:
 - Currently: `ghcr.io/conalmullan/video-toolkit-*`
 - Target: `ghcr.io/digitalsamba/video-toolkit-*`
 - Add OCI labels to Dockerfiles for auto-linking
-- Update CLAUDE.md and docs references
+- Update AGENTS.md and docs references
 - Packages: qwen-edit, realesrgan, propainter (+ animate, wan-i2v if used)
 
 ---
@@ -212,8 +212,8 @@ Tested in `android-screenshare-sprint` (Jan 2026). Now promoted to default workf
 - [x] `audioFile` field added to DemoConfig, info, overview, summary, credits configs
 - [x] SprintReview.tsx renders per-scene `<Audio>` within each `Series.Sequence`
 - [x] Backward compatibility: global voiceover track still works when no per-scene audio
-- [x] `/generate-voiceover` command updated to detect and prefer per-scene mode
-- [x] Documentation updated (CLAUDE.md, README.md, getting-started.md)
+- [x] `$generate-voiceover` command updated to detect and prefer per-scene mode
+- [x] Documentation updated (AGENTS.md, README.md, getting-started.md)
 
 **Remaining ideas (not blocking):**
 - [ ] Store concat list file in project for reproducibility

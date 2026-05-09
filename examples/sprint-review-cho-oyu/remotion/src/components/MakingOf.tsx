@@ -174,7 +174,7 @@ export const MakingOf: React.FC = () => {
           <p style={styles.label}>The Invitation</p>
           <h2 style={styles.heading}>This capability is yours too</h2>
           <p style={styles.paragraph}>
-            <span style={styles.accent}>Claude Code</span>,{" "}
+            <span style={styles.accent}>Codex</span>,{" "}
             <span style={styles.accent}>JIRA MCP</span>,{" "}
             <span style={styles.accent}>Remotion skills</span> — these tools are ready
             for any team that wants to work this way. We're not gatekeeping. We're

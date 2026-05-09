@@ -15,13 +15,13 @@
 > "Video conferencing integration usually means weeks of work - wading through API docs, wrangling authentication, dealing with WebRTC headaches. There's a faster way."
 
 ### [0:18 - 0:25] Solution Intro
-> "The Digital Samba skill gives Claude everything it needs to build video apps with you."
+> "The Digital Samba skill gives Codex everything it needs to build video apps with you."
 
 ### [0:25 - 0:45] Skill Installation
-> "A few simple commands to install. Clone the repo, and Claude learns our REST API, SDK methods, and common integration patterns. No configuration needed."
+> "A few simple commands to install. Clone the repo, and Codex learns our REST API, SDK methods, and common integration patterns. No configuration needed."
 
 ### [0:45 - 1:15] Building the Demo App
-> "Let's build something real. We asked Claude to create an interview room app from scratch. It picked Next.js, set up API routes, and handled JWT authentication - all using patterns from the skill. A few minutes later, we have a working app."
+> "Let's build something real. We asked Codex to create an interview room app from scratch. It picked Next.js, set up API routes, and handled JWT authentication - all using patterns from the skill. A few minutes later, we have a working app."
 
 ### [1:15 - 1:50] App Walkthrough
 > "Here's how it works. Interviewers create a room, get a code to share. Candidates enter the code and join. The API handles the room, enables recording, generates tokens. Simple flow, no fuss."
@@ -80,11 +80,11 @@ Add video calls to your app in an afternoon.
 
 Video conferencing integration usually means weeks of work - wading through API docs, wrangling authentication, dealing with WebRTC headaches. There's a faster way.
 
-The Digital Samba skill gives Claude everything it needs to build video apps with you.
+The Digital Samba skill gives Codex everything it needs to build video apps with you.
 
-A few simple commands to install. Clone the repo, and Claude learns our REST API, SDK methods, and common integration patterns. No configuration needed.
+A few simple commands to install. Clone the repo, and Codex learns our REST API, SDK methods, and common integration patterns. No configuration needed.
 
-Let's build something real. We asked Claude to create an interview room app from scratch. It picked Next.js, set up API routes, and handled JWT authentication - all using patterns from the skill. A few minutes later, we have a working app.
+Let's build something real. We asked Codex to create an interview room app from scratch. It picked Next.js, set up API routes, and handled JWT authentication - all using patterns from the skill. A few minutes later, we have a working app.
 
 Here's how it works. Interviewers create a room, get a code to share. Candidates enter the code and join. The API handles the room, enables recording, generates tokens. Simple flow, no fuss.
 

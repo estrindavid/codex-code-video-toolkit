@@ -72,7 +72,7 @@ sprint-review-cho-oyu/
 ├── ASSETS-NEEDED.md       # What media to create
 ├── VIDEO-SPEC.md          # Full video specification
 ├── VOICEOVER-SCRIPT.md    # Narration script (~3 min)
-├── CLAUDE.md              # AI context
+├── AGENTS.md              # AI context
 ├── PROJECT-STATUS.md      # Production tracking
 └── remotion/
     ├── src/

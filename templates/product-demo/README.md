@@ -200,7 +200,7 @@ product-demo/
 }
 ```
 
-## Commands
+## Workflow Skills
 
 | Command | Description |
 |---------|-------------|
@@ -244,6 +244,6 @@ The `demo` scene supports three chrome types:
 
 - **Scene order**: Problem → Solution → Demo → Stats → CTA is a proven flow
 - **Timing**: Match scene duration to voiceover length
-- **Demo length**: Use `/record-demo` to capture browser interactions
+- **Demo length**: Use `$record-demo` to capture browser interactions
 - **Playback rate**: Speed up long demos with FFmpeg before adding to project
 - **Stats impact**: Use big numbers with clear units for visual punch

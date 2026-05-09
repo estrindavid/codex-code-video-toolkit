@@ -25,15 +25,15 @@ Adding video calls to your application usually means weeks of work. Wading throu
 
 <break time="1.0s" />
 
-Introducing the Digital Samba skill for Claude. It gives Claude deep knowledge of video conferencing integration - APIs, SDKs, authentication patterns - all the context Claude needs to build your integration.
+Introducing the Digital Samba skill for Codex. It gives Codex deep knowledge of video conferencing integration - APIs, SDKs, authentication patterns - all the context Codex needs to build your integration.
 
 <break time="1.0s" />
 
-Setup is simple. Clone the skill repository into your project's claude folder, and Claude instantly understands Digital Samba's REST API, embedded SDK, and integration best practices. The skill includes comprehensive documentation, code examples, and proven patterns for common use cases.
+Setup is simple. Clone the skill repository into your project's codex folder, and Codex instantly understands Digital Samba's REST API, embedded SDK, and integration best practices. The skill includes comprehensive documentation, code examples, and proven patterns for common use cases.
 
 <break time="1.5s" />
 
-Let's see it in action. We asked Claude to build an interview room application - a real use case where recruiters conduct video interviews with candidates. We gave Claude creative freedom to design the experience. It built a complete Next.js application with JWT authentication, room management, and embedded video calls. The skill provided all the context - API endpoints, SDK methods, authentication patterns. In minutes, a working application designed and built by AI.
+Let's see it in action. We asked Codex to build an interview room application - a real use case where recruiters conduct video interviews with candidates. We gave Codex creative freedom to design the experience. It built a complete Next.js application with JWT authentication, room management, and embedded video calls. The skill provided all the context - API endpoints, SDK methods, authentication patterns. In minutes, a working application designed and built by AI.
 
 <break time="1.5s" />
 

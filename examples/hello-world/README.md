@@ -25,5 +25,5 @@ A 25-second video with 4 animated slides:
 - **Edit content**: Open `src/config/sprint-config.ts` and change the text
 - **Change colors**: Edit `src/config/brand.ts` to match your brand
 - **Add demos**: Drop `.mp4` files in `public/demos/` and reference in config
-- **Add voiceover**: Use `/generate-voiceover` in Claude Code
-- **Full project**: Run `/video` in Claude Code to create a production project
+- **Add voiceover**: Use `$generate-voiceover` in Codex
+- **Full project**: Run `$video` in Codex to create a production project

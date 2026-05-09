@@ -1,6 +1,6 @@
 # Example: Digital Samba Skill Demo
 
-Marketing video demonstrating how the Digital Samba Claude Code skill accelerates video conferencing app development.
+Marketing video demonstrating how the Digital Samba Codex skill accelerates video conferencing app development.
 
 > Contributed by [Digital Samba](https://digitalsamba.com)
 
@@ -23,14 +23,14 @@ Marketing video demonstrating how the Digital Samba Claude Code skill accelerate
 
 **Duration:** ~2:30
 **Template:** product-demo style
-**Audience:** Developers evaluating Digital Samba, Claude Code users
+**Audience:** Developers evaluating Digital Samba, Codex users
 
 ### Scenes
 
 1. Title (8s) - Dual logos + headline
 2. Problem Statement (10s) - "Video conferencing is complex..."
 3. Solution Intro (7s) - "What if AI understood your video API?"
-4. Skill Installation (20s) - GIF demo of `claude mcp add`
+4. Skill Installation (20s) - GIF demo of `codex mcp add`
 5. Building the App (30s) - Terminal demo
 6. App Walkthrough (35s) - Browser recording of working app
 7. Live Video Call (15s) - Demo of actual video conferencing
@@ -65,10 +65,10 @@ digital-samba-skill-demo/
 ├── ASSETS-NEEDED.md       # What media to create
 ├── VIDEO-SPEC.md          # Full video specification
 ├── VOICEOVER-SCRIPT.md    # Narration script
-├── CLAUDE.md              # AI context
+├── AGENTS.md              # AI context
 ├── assets/
-│   ├── claude-code-install.gif     # Source for conversion
-│   └── claude-desktop-install.gif  # Alternative
+│   ├── codex-code-install.gif     # Source for conversion
+│   └── codex-desktop-install.gif  # Alternative
 └── remotion/
     ├── src/
     │   └── config/        # Video configuration

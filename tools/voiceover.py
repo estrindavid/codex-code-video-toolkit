@@ -569,7 +569,7 @@ def main():
         print(
             "Note: --tone/--instruct is ignored when using a cloned voice.\n"
             "  The clone's tone comes from your reference recording.\n"
-            "  Tip: Run /voice-clone to record a new reference with a different feel.",
+            "  Tip: Run $voice-clone to record a new reference with a different feel.",
             file=sys.stderr,
         )
         args.instruct = ""

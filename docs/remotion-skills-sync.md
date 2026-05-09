@@ -6,8 +6,8 @@ The toolkit maintains two complementary Remotion skills:
 
 | Skill | Path | Source | Content |
 |-------|------|--------|---------|
-| `remotion-official` | `.claude/skills/remotion-official/` | [remotion-dev/skills](https://github.com/remotion-dev/skills) | Core framework knowledge (hooks, animations, rendering, media, etc.) |
-| `remotion` | `.claude/skills/remotion/` | This toolkit | Custom transitions, shared components, project conventions |
+| `remotion-official` | `.agents/skills/remotion-official/` | [remotion-dev/skills](https://github.com/remotion-dev/skills) | Core framework knowledge (hooks, animations, rendering, media, etc.) |
+| `remotion` | `.agents/skills/remotion/` | This toolkit | Custom transitions, shared components, project conventions |
 
 **Before the split**, our `remotion/SKILL.md` duplicated core Remotion documentation that quickly became outdated. The official skill repo is maintained by the Remotion team and stays current with framework releases.
 
@@ -37,7 +37,7 @@ The toolkit maintains two complementary Remotion skills:
 A GitHub Actions workflow (`.github/workflows/sync-remotion-skills.yml`) runs weekly to check for upstream changes:
 
 1. Clones `remotion-dev/skills` (shallow)
-2. Compares `skills/remotion/` against our `.claude/skills/remotion-official/`
+2. Compares `skills/remotion/` against our `.agents/skills/remotion-official/`
 3. Opens a PR if files have changed
 
 ### Manual Sync
@@ -49,11 +49,11 @@ To sync manually:
 git clone --depth 1 https://github.com/remotion-dev/skills.git /tmp/remotion-skills
 
 # Copy into toolkit
-rm -rf .claude/skills/remotion-official
-cp -r /tmp/remotion-skills/skills/remotion .claude/skills/remotion-official
+rm -rf .agents/skills/remotion-official
+cp -r /tmp/remotion-skills/skills/remotion .agents/skills/remotion-official
 
 # Commit
-git add .claude/skills/remotion-official
+git add .agents/skills/remotion-official
 git commit -m "Sync official Remotion skills ($(git -C /tmp/remotion-skills rev-parse --short HEAD))"
 ```
 
